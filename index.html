@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free bootstrap documentation template">
+    <title>Pagame API Documentation</title>
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- using local links -->
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/sidebar-themes.min.css">
+    <link rel="stylesheet" href="css/bootstrap-treeview.min.css">
+    <link rel="stylesheet" href="css/postman.min.css">
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> </head>
+
+<body>
+    <div class="page-wrapper toggled light-theme">
+        <div class="modal dark-background" id="snippetModal" tabindex="-1" role="dialog" aria-labelledby="documentation-response-modal" style="display: none;">
+        <div class="modal-dialog" role="document">
+          <div class="modal-header">
+            <div class="title">Example Response</div>
+            <button type="button" class="close btn-circle" data-dismiss="modal" aria-label="Close">
+              <div>
+              <span id="closeModal" aria-hidden="true">×</span>
+              </div>
+            </button>
+          </div>
+          <div class="modal-content">
+            <div class="modal-body" style="width: 540.5px;">
+              <pre class="  language-javascript">
+                  <code class=" language-javascript"></code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <!-- sidebar-brand  -->
+                <div class="sidebar-item sidebar-brand font-weight-bold" style="background-color: black; color: #AEFDD2;">Pagame API Documentation</div>
+                <!-- sidebar-header  -->
+                <!-- sidebar-menu  -->
+                <div class=" sidebar-item sidebar-menu">
+                    <div id="tree"></div>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+        </nav>
+        <!-- page-content  -->
+        <main class="page-content">
+            <div id="overlay" class="overlay"></div>
+            <div class="container-fluid">
+                <div class="row d-flex align-items-center p-3 border-bottom">
+                    <div class="col-md-1">
+                        <a id="toggle-sidebar" class="btn rounded-0 p-3" href="#"> <i class="fas fa-bars"></i> </a>
+                    </div>
+                    <div class="col-md-9"></div>
+                    <div class="col-md-2 text-left">
+                    </div>
+                </div>
+                <div class="row p-lg-4">
+                    <article class="main-content col-md-12 pr-lg-9" id="doc-body">
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12">
+                                <div class="api-information">
+                                    <div class="collection-name">
+                                        <h1 id="p-game-api-v2-0-0">Págame API v2.0.0</h1>
+                                    </div>
+                                    <div class="collection-description">
+                                        
+<h2 id="what-is-p-game-">What is Págame?</h2>
+<h3 id="about">About</h3>
+<p><a href="https://pagame.org">Págame</a> is a young SaaS company determined to facilitate digital transactions between people, businesses, and banks. Págame was founded with the core mission of increasing financial inclusivity in Bolivia, and all functionality is designed and developed in alignment with this mission.</p>
+<p>This API was developed by the Pagame engineering team. Please contact <a href = "mailto: brendan@pagame.org">brendan@pagame.org</a> with any inquiries.</p>
+<h3 id="history">History</h3>
+<p>Págame was founded in the Summer of 2020 by three Wharton students with connections to Bolivia and the greater Latin American region, motivated by the following statistic: In Bolivia, over 70% of the population has access to smartphones, yet less than 30% own and actively operate a formal bank account. </p>
+<p>Currently, P2P transactions require an insurmountable amount of information, to be manually entered by the user. This tedious process simply isn&#39;t necessary (it can be streamlined with an efficient and secure data retrieval system), and it&#39;s responsible for a nation-wide overdependence on cash. This overdependence is responsible for the following risks:</p>
+<ul>
+<li>Transmission of contaminated paper currency have been shown to significantly contribute to the spread of viral diseases (including COVID-19)</li>
+<li>Household savings in the form of cash are exposed to risk of robbery/burglary</li>
+<li>Citizens without formal financial history cannot be evaluated for loans/credit offerings</li>
+<li>Large informal sector of the Bolivian economy limits precision of GDP measurement and further hinders large-scale economic growth</li>
+<li>The country faces increasing inability to grow transaction volume due to existing P2P payment barriers</li>
+</ul>
+<h3 id="solution">Solution</h3>
+<p>Págame aims to mitigate the above risks by offering a suite of software solutions for a digital and inclusive financial network. The core value of Pagame is the ability to efficiently and securely organize, filter, and query data required for financial transactions. 
+Págame innovates transaction processes by decreasing the amount of input required from a user. Upon sign up, a user will receive a one-time prompt to input the necessary information to operate their funds. After which, Pagame will retrieve all (non-specific to action) data to provide a supreme user experience in the transaction process.</p>
+<h3 id="what-is-included-in-this-documentation-">What is included in this documentation?</h3>
+<p>This document describes the functions and features provided by the Pagame client API v2.0.0. Pagame builds upon this API with powerful mobile interfaces to deliver an unmatched user experience. 
+However, we also acknowledge that a lack of collaborative innovation is, in part, responsible for the lack of digital coherence in the financial system. Thus, the Pagame API can work to bridge software communication between distinct financial networks. We sincerely welcome developers, engineers, and members of Bolivian financial institutions to explore our client API. Please reach out if you are interested in developing financial software on top of our foundational data network.</p>
+<h2 id="usage">Usage</h2>
+<p>All responses will be of the form:</p>
+<pre><code class="lang-javascript">{
+    <span class="hljs-attr">"data"</span>: <span class="hljs-string">"Mixed type holding the content of the response"</span>,
+
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Description of what happened"</span> 
+}
+</code></pre>
+<p>Subsequent response definitions will only detail the expected value of &quot;data&quot; field.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="1">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            New User <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user</div>
+                                    
+                                    <div class="description request-description">
+                                        <p>This API endpoint creates a new user with a unique user id. Accounts can then be added to the new user.</p>
+<h3 id="arguments">Arguments</h3>
+<p>A request body should adhere to the example below.</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-attr">"username"</span>: <span class="hljs-string">"john"</span>,
+  <span class="hljs-attr">"password"</span>: <span class="hljs-string">"Password1!"</span>,
+  <span class="hljs-attr">"userAttributes"</span>: {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"john"</span>,
+    <span class="hljs-attr">"family_name"</span>: <span class="hljs-string">"doe"</span>,
+    <span class="hljs-attr">"address"</span>: <span class="hljs-string">"4 Plum Tree Lane, Commack, NY 11725"</span>,
+    <span class="hljs-attr">"gender"</span>: <span class="hljs-string">"Male"</span>,
+    <span class="hljs-attr">"birthdate"</span>: <span class="hljs-string">"11/27/2000"</span>,
+    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"brendan@pagame.org"</span>,
+    <span class="hljs-attr">"phone_number"</span>: <span class="hljs-string">"+16313568914"</span>
+  }
+}
+</code></pre>
+<h3 id="response">Response</h3>
+<ul>
+<li>&#39;400 Error&#39; if request body is invalid</li>
+<li>&#39;401 Unauthorized&#39; if the auth header token has expired or is missing</li>
+<li>&#39;200 OK&#39; on success</li>
+</ul>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Authorization</div>
+                                            <div class="value col-md-9 col-xs-12">eyJraWQiOiJHbVFxQnp6ZTFiMDZtMTBpb0d0Z1o2UDVhS0VYUDVDdjJrWDJtOUF3UU5rPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNDRiMjBmOC1iOGVmLTQ5ZmYtYTU2NC0xOTBjMmZjZDJmNDMiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6Im9wZW5pZCIsImF1dGhfdGltZSI6MTYxMTUxOTM0OSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfYUpGR2dBVkhBIiwiZXhwIjoxNjExNTIyOTQ5LCJpYXQiOjE2MTE1MTkzNDksInZlcnNpb24iOjIsImp0aSI6ImRhNjAyOTk4LWFhNTAtNGUzMC04ZTUxLWMyMTE2ZGU2NGI2ZCIsImNsaWVudF9pZCI6IjYydWk4NjRlNG8zdTk4c3VlMmtwcDQ0YmNoIiwidXNlcm5hbWUiOiJ5aW5neWluZyJ9.n0bJf8AYJcN7hyVviBu-bPyOFzLxXmskhzw29lT6r51WQ0uxIVidCh_CEmMslYE6XHtgviOYfsxuMMs71Y5dI7MlAZYnGfXV9bkT3o24kmIfQQ3KGDMM67Cf0EuvmdOjhzOF38CoVudpM0eoKJXZXsYcLg1XauCqJbg30uSTnrzeU1EOCVKN5Eq8JIwquxiXf6ghvI87impzjJGHwSnYArzg4ZH2pAinHD7Zf4Q3dRNDZwGs13h64MSl1RxBAvUypX5CVtnVSLy-xTPZzh0ln5-ndb1QeqWVCxsut50J-ygfVD1uVTv_B0ZnpGQFMWm8TbON3Q22RvSCsJn3Ni8u2A</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="New User">
+                                                  <code>
+                                                    
+{
+  "username": "yingying04",
+  "password": "Password1!",
+  "userAttributes": {
+    "name": "yy",
+    "family_name": "y",
+    "address": "1 Main Street NY 10000",
+    "gender": "Female",
+    "birthdate": "01/01/2000",
+    "email": "yyy@pagame.org",
+    "phone_number": "+1234567899"
+  }
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">POST New User</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="1" data-response-info="response_1">POST New User</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="1"  data-id="response_1">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="POST New User">
+                                                <code class="is-highlighted">
+POST https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user
+{
+  "username": "john",
+  "password": "Password1!",
+  "userAttributes": {
+    "name": "john",
+    "family_name": "doe",
+    "address": "4 Plum Tree Lane, Commack, NY 11725",
+    "gender": "Male",
+    "birthdate": "11/27/2000",
+    "email": "brendan@pagame.org",
+    "phone_number": "+16313568914"
+  }
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="POST New User">
+                                                    <code class="is-highlighted">
+{
+    "status": "success",
+    "id_token": "eyJraWQiOiJtTlloUVdXNitxMFJNckRBVmVDbzVxSWdmcDRFV1hCbnErN1lJMWd2dU9zPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlYzAyZGNmYS0xN2RiLTRiODItOTk0MS04OTdhOThiNTgxZGIiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImFkZHJlc3MiOnsiZm9ybWF0dGVkIjoiNCBQbHVtIFRyZWUgTGFuZSwgQ29tbWFjaywgTlkgMTE3MjUifSwiYmlydGhkYXRlIjoiMTFcLzI3XC8yMDAwIiwiZ2VuZGVyIjoiTWFsZSIsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC51cy1lYXN0LTEuYW1hem9uYXdzLmNvbVwvdXMtZWFzdC0xX2FKRkdnQVZIQSIsInBob25lX251bWJlcl92ZXJpZmllZCI6ZmFsc2UsImNvZ25pdG86dXNlcm5hbWUiOiJqb2huIiwiYXVkIjoiM2Q0MWRncjMwODU5dmQzdTU0MzF2NGFkcXAiLCJldmVudF9pZCI6IjFjZWI1NGNmLTRmYjMtNDY2MS1iNmQ5LTlmYTYwY2I0Y2Q3NyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjA5NzkwNTMzLCJuYW1lIjoiam9obiIsInBob25lX251bWJlciI6IisxNjMxMzU2ODkxNCIsImV4cCI6MTYwOTc5NDEzMywiaWF0IjoxNjA5NzkwNTM0LCJmYW1pbHlfbmFtZSI6ImRvZSIsImVtYWlsIjoiYnJlbmRhbkBwYWdhbWUub3JnIn0.HHDqJ48xzqS2JyTEXo89YwqeGML7WPSL_lBmQac1nYnHZUx5B_YQhxCmEi9Hg97L3Zh39-rAUNaEnvYR5lhWx9VnlbpBQUFNHoj87ASJcagnDP1945z_0nTuqzVDI7ALJTg8AaxGJAXPif7lEccw2DliSKvQZVgZkwDVEffHpYlvxLK6mugrdoK_vjOlFrsCFIEXW4oBAvRtcmLSidaiX9fp1oVOVWM_SepsdlFE01LLS24sNfC1nJmnmAGoDidwvNDffF8z7I214wrLFCCIgo0WdxenWgum4m-qQf8FWbasBoXMxjjxgBiyyIWYWMsN-mJQ3962PhZtFr8DKOEKag",
+    "user_id": "2c80e15b-a69c-4950-ac1c-79dd2747a30f",
+    "is_new": "true"
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="2">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            GET User Sign In <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">https://pagameauth.auth.us-east-1.amazoncognito.com/login?client_id=3d41dgr30859vd3u5431v4adqp&response_type=code&scope=openid&redirect_uri=https://pagame.org</div>
+                                    
+                                    <div class="description request-description">
+                                        <p>This request retrieves the hosted UI for user sign in. A successful sign in will yield the Authorization Code to be used in the POST User Authentication request to retrieve an access_token.</p>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">PARAMS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">client_id</div>
+                                            <div class="value col-md-9 col-xs-12">3d41dgr30859vd3u5431v4adqp</div>
+                                            <div class="description col-md-9 col-xs-12"><p></p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">response_type</div>
+                                            <div class="value col-md-9 col-xs-12">code</div>
+                                            <div class="description col-md-9 col-xs-12"><p></p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">scope</div>
+                                            <div class="value col-md-9 col-xs-12">openid</div>
+                                            <div class="description col-md-9 col-xs-12"><p></p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">redirect_uri</div>
+                                            <div class="value col-md-9 col-xs-12">https://pagame.org</div>
+                                            <div class="description col-md-9 col-xs-12"><p></p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">GET User Sign In</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="2" data-response-info="response_2">GET User Sign In</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="2"  data-id="response_2">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="GET User Sign In">
+                                                <code class="is-highlighted">
+GET https://pagameauth.auth.us-east-1.amazoncognito.com/login?response_type=code&amp;client_id=62ui864e4o3u98sue2kpp44bch&amp;redirect_uri=https://pagame.org&amp;state=STATE&amp;scope=openid
+</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="GET User Sign In">
+                                                    <code class="is-highlighted">
+
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;head&gt;
+            &lt;link href="https://d3oia8etllorh5.cloudfront.net/20201215211355/css/bootstrap.min.css" rel="stylesheet"
+        media="screen" /&gt;
+            &lt;link href="https://d3oia8etllorh5.cloudfront.net/20201215211355/css/cognito-login.css" rel="stylesheet"
+        media="screen" /&gt;
+            &lt;title&gt;Signin&lt;/title&gt;
+            &lt;script src="https://d3oia8etllorh5.cloudfront.net/20201215211355/js/amazon-cognito-advanced-security-data.min.js" &gt;&lt;/script&gt;
+            &lt;script&gt;
+    function getAdvancedSecurityData(formReference) {
+        if (typeof AmazonCognitoAdvancedSecurityData === "undefined") {
+            return true;
+        }
+
+        // UserpoolId is not available on frontend for springboard. We do not use userPoolId
+        // anyway other than put in context data. 
+        var userPoolId = "";
+        var clientId = getUrlParameter("client_id");
+
+        var username = "";
+        var usernameInput = document.getElementsByName("username")[0];
+        if (usernameInput &amp;&amp; usernameInput.value) {
+            username = usernameInput.value;
+        }
+
+        var asfData = AmazonCognitoAdvancedSecurityData.getData(username, userPoolId, clientId);
+        if (typeof asfData === "undefined") {
+            return true;
+        }
+
+        if (formReference &amp;&amp; formReference.cognitoAsfData) {
+            formReference.cognitoAsfData.value = asfData
+        }
+
+        return true;
+    }
+
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    function onSubmit(evt, formRef) {
+        formRef.querySelector('button[type="submit"]').disabled = true;
+        if (!!formRef.submitted) {
+            evt.preventDefault();
+            return false;
+        } else {
+            formRef.submitted = true;
+            return getAdvancedSecurityData(formRef);
+        }
+    }
+&lt;/script&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+        &lt;/head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="modal-dialog"&gt;
+                &lt;div class="modal-content background-customizable modal-content-mobile visible-xs visible-sm"&gt;
+                    &lt;div&gt;
+                        &lt;div&gt;
+                            &lt;div class="banner-customizable"&gt;
+                                &lt;center&gt;
+                            
+                        &lt;/center&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="modal-body"&gt;
+                        &lt;div&gt;
+                            &lt;div&gt;
+    
+&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;div&gt;
+                                &lt;div&gt;
+    
+&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;div&gt;
+    
+&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;div&gt;
+                                    &lt;div&gt;
+                                        &lt;Span class="textDescription-customizable "&gt;Sign in with your username and password&lt;/Span&gt;
+                                        &lt;form action="/login?response_type=code&amp;client_id=62ui864e4o3u98sue2kpp44bch&amp;redirect_uri=https://pagame.org&amp;state=STATE&amp;scope=openid" method="POST" name="cognitoSignInForm"
+              class="cognito-asf" onsubmit="getAdvancedSecurityData(this);"&gt;
+                                            &lt;input type="hidden" name="_csrf" value="937aca24-b77c-403d-8636-21b1b527720d"/&gt;
+                                            &lt;label for="signInFormUsername" class="label-customizable"&gt;Username&lt;/label&gt;
+                                            &lt;div&gt;
+                                                &lt;input id="signInFormUsername" name="username" type="text" class="form-control inputField-customizable"
+                       placeholder="Username" autocapitalize="none" required&gt;
+            
+                                            &lt;/div&gt;
+                                            &lt;label for="signInFormPassword" class="label-customizable"&gt;Password&lt;/label&gt;
+                                            &lt;div&gt;
+                                                &lt;input id="signInFormPassword" name="password" type="password" class="form-control inputField-customizable"
+                   placeholder="Password"
+                   required&gt;
+                                            &lt;/div&gt;
+                                            &lt;input type="hidden" class="form-control inputField-customizable" name="cognitoAsfData"/&gt;
+                                            <a href="/forgotPassword?response_type=code&amp;client_id=62ui864e4o3u98sue2kpp44bch&amp;redirect_uri=https://pagame.org&amp;state=STATE&amp;scope=openid">Forgot your password?</a>
+                                            &lt;input name="signInSubmitButton" type="Submit" value="Sign in"
+                   class="btn btn-primary submitButton-customizable" aria-label="submit"/&gt;
+                                            &lt;br/&gt;
+                                            &lt;div&gt;
+                                                &lt;p class="redirect-customizable"&gt;
+                                                    &lt;span&gt;Need an account?&lt;/span&gt;&nbsp;
+                                                    <a href="/signup?response_type=code&amp;client_id=62ui864e4o3u98sue2kpp44bch&amp;redirect_uri=https://pagame.org&amp;state=STATE&amp;scope=openid">Sign up</a>
+                                                &lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/form&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="modal-content background-customizable modal-content-mobile visible-md visible-lg"&gt;
+                    &lt;div&gt;
+                        &lt;div&gt;
+                            &lt;div class="banner-customizable"&gt;
+                                &lt;center&gt;
+                            
+                        &lt;/center&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="modal-body"&gt;
+                        &lt;div&gt;
+                            &lt;div&gt;
+    
+&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;div&gt;
+                                &lt;div&gt;
+                                    &lt;div&gt;
+    
+&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div&gt;
+                                    &lt;div&gt;
+    
+&lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;div&gt;
+                                    &lt;div&gt;
+                                        &lt;Span class="textDescription-customizable "&gt;Sign in with your username and password&lt;/Span&gt;
+                                        &lt;form action="/login?response_type=code&amp;client_id=62ui864e4o3u98sue2kpp44bch&amp;redirect_uri=https://pagame.org&amp;state=STATE&amp;scope=openid" method="POST" name="cognitoSignInForm"
+              class="cognito-asf" onsubmit="getAdvancedSecurityData(this);"&gt;
+                                            &lt;input type="hidden" name="_csrf" value="937aca24-b77c-403d-8636-21b1b527720d"/&gt;
+                                            &lt;label for="signInFormUsername" class="label-customizable"&gt;Username&lt;/label&gt;
+                                            &lt;div&gt;
+                                                &lt;input id="signInFormUsername" name="username" type="text" class="form-control inputField-customizable"
+                       placeholder="Username" autocapitalize="none" required&gt;
+            
+                                            &lt;/div&gt;
+                                            &lt;label for="signInFormPassword" class="label-customizable"&gt;Password&lt;/label&gt;
+                                            &lt;div&gt;
+                                                &lt;input id="signInFormPassword" name="password" type="password" class="form-control inputField-customizable"
+                   placeholder="Password"
+                   required&gt;
+                                            &lt;/div&gt;
+                                            &lt;input type="hidden" class="form-control inputField-customizable" name="cognitoAsfData"/&gt;
+                                            <a href="/forgotPassword?response_type=code&amp;client_id=62ui864e4o3u98sue2kpp44bch&amp;redirect_uri=https://pagame.org&amp;state=STATE&amp;scope=openid">Forgot your password?</a>
+                                            &lt;input name="signInSubmitButton" type="Submit" value="Sign in"
+                   class="btn btn-primary submitButton-customizable" aria-label="submit"/&gt;
+                                            &lt;br/&gt;
+                                            &lt;div&gt;
+                                                &lt;p class="redirect-customizable"&gt;
+                                                    &lt;span&gt;Need an account?&lt;/span&gt;&nbsp;
+                                                    <a href="/signup?response_type=code&amp;client_id=62ui864e4o3u98sue2kpp44bch&amp;redirect_uri=https://pagame.org&amp;state=STATE&amp;scope=openid">Sign up</a>
+                                                &lt;/p&gt;
+                                            &lt;/div&gt;
+                                        &lt;/form&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script src="https://d3oia8etllorh5.cloudfront.net/20201215211355/js/jquery-3.4.1.min.js" &gt;&lt;/script&gt;
+        &lt;script&gt;
+    var $inputs = $(":input");
+    $inputs.on('input', function () {
+        var self = this;
+        var matches = $('input[name="' + this.name + '"]');
+        var selfIndex = matches.index($(self));
+        matches.each(function (index, element) {
+            if (selfIndex !== index) {
+                $(element).val($(self).val());
+            }
+        });
+    });
+&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="3">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            User Authentication <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">https://pagameauth.auth.us-east-1.amazoncognito.com/oauth2/token</div>
+                                    
+                                    <div class="description request-description">
+                                        <p>This request requires a valid code and client_id. It returns a user's access token to be used for Authentication in subsequent requests.</p>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">urlencoded</span></div>
+                                        <hr>
+                                              <div class="param row">
+                                                <div class="name col-md-3 col-xs-12">grant_type</div>
+                                                <div class="value col-md-9 col-xs-12">authorization_code</div>
+                                                <div class="description col-md-9 col-xs-12"><p></p>
+                                                </div>
+                                              </div>
+                                              <div class="param row">
+                                                <div class="name col-md-3 col-xs-12">client_id</div>
+                                                <div class="value col-md-9 col-xs-12">62ui864e4o3u98sue2kpp44bch</div>
+                                                <div class="description col-md-9 col-xs-12"><p></p>
+                                                </div>
+                                              </div>
+                                              <div class="param row">
+                                                <div class="name col-md-3 col-xs-12">redirect_uri</div>
+                                                <div class="value col-md-9 col-xs-12">https://pagame.org</div>
+                                                <div class="description col-md-9 col-xs-12"><p></p>
+                                                </div>
+                                              </div>
+                                              <div class="param row">
+                                                <div class="name col-md-3 col-xs-12">code</div>
+                                                <div class="value col-md-9 col-xs-12">f1ae1ceb-858a-4f10-a812-a5661c336357</div>
+                                                <div class="description col-md-9 col-xs-12"><p></p>
+                                                </div>
+                                              </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">User Authentication</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="3" data-response-info="response_3">User Authentication</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="3"  data-id="response_3">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="User Authentication">
+                                                <code class="is-highlighted">
+POST https://pagameauth.auth.us-east-1.amazoncognito.com/oauth2/token
+</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="User Authentication">
+                                                    <code class="is-highlighted">
+{
+    "id_token": "eyJraWQiOiJtTlloUVdXNitxMFJNckRBVmVDbzVxSWdmcDRFV1hCbnErN1lJMWd2dU9zPSIsImFsZyI6IlJTMjU2In0.eyJhdF9oYXNoIjoidEJIMFZQb3NfNVhaMlgyd0dSZ0cwQSIsInN1YiI6ImYxMTYzYmZlLTMxZWQtNGJlYi05YjEzLTlmOWIyN2EyMDhlZiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhZGRyZXNzIjp7ImZvcm1hdHRlZCI6IjggUGx1bSBUcmVlIExhbmUifSwiZ2VuZGVyIjoiTSIsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC51cy1lYXN0LTEuYW1hem9uYXdzLmNvbVwvdXMtZWFzdC0xX2FKRkdnQVZIQSIsImNvZ25pdG86dXNlcm5hbWUiOiJicmVuZGFuIiwiYXVkIjoiNjJ1aTg2NGU0bzN1OThzdWUya3BwNDRiY2giLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYwOTc5MDM2MCwibmFtZSI6IkJyZW5kYW4iLCJwaG9uZV9udW1iZXIiOiIrMTYzMTM1Njg5MTQiLCJleHAiOjE2MDk3OTM5NjAsImlhdCI6MTYwOTc5MDM2MCwiZmFtaWx5X25hbWUiOiJNY0NhZmZyZXkiLCJlbWFpbCI6ImJtY2NhZkB3aGFydG9uLnVwZW5uLmVkdSJ9.jUSEm1o9GiPJkm6-zBh_hJsPvHUaQaJYY5ffTv_23xOcUU72M7top1OLa0Cy_bM9OWLNIlDUsfGy5V82xx3dnQwc9zdLF8s6bu12WSUuqH6JNOyf-WTZUGlYJgi6TQiDI9qqko0p5LuBGM9ynKrii6MnKiGgbBfJlZvwJOOMzMCftaev4fBctgH9XuJCoxv2tW3EEqLGFboVa_Gv5eyRHqTOzASHAMunEDCFG5osvy5ZjuA7PCLoHI8kivr5kFQv5XRyeGIBQ1bsD13uC0gJux49NOo84Ndbvm53HSdrlFTofRwhW1a8hf8ann7nYyc-A6YXhgbPzud6AseipmxvzQ",
+    "access_token": "eyJraWQiOiJHbVFxQnp6ZTFiMDZtMTBpb0d0Z1o2UDVhS0VYUDVDdjJrWDJtOUF3UU5rPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJmMTE2M2JmZS0zMWVkLTRiZWItOWIxMy05ZjliMjdhMjA4ZWYiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6Im9wZW5pZCIsImF1dGhfdGltZSI6MTYwOTc5MDM2MCwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfYUpGR2dBVkhBIiwiZXhwIjoxNjA5NzkzOTYwLCJpYXQiOjE2MDk3OTAzNjAsInZlcnNpb24iOjIsImp0aSI6IjE5MzY5NWU2LWU4ZDQtNDNiMS04MjNmLWQ1MDUzYzNhMWVjMiIsImNsaWVudF9pZCI6IjYydWk4NjRlNG8zdTk4c3VlMmtwcDQ0YmNoIiwidXNlcm5hbWUiOiJicmVuZGFuIn0.QWXIm5FUk0cgl_mutoZJ340mk9gCCD0FnwI9hYfQnIK1fZWsMw9ZDV5eQcgphL3sUA8wmMnX5fNul1d3ZVeltS7fU_vBh3SKvuWo_TbyO1O-IZwwpaKvnPaWJ89I522dxcprJosI-rFRpX1Ogq8JgPlFePvX_afJYPyU7n5NME-TTYl_uRfEXYNvwK_-32R1owKp_nEuBh4l8Q5TrR1IRk3XieMdfbwiOfYd20Vk0Xd-t8kqvsRCRHyBxKCGGdB6NkuXgFeVZVYoei_P00AHkVf-DL4FiDZtB09MwuahHW-s4hKYzsg4kSEme0i5CqJV7L3T7aBIjcDhCmOh1tv8Xg",
+    "refresh_token": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.i1Jk6h2MIw0mzkgt2T0pEBt-MWT_so4zOeajRup0JkwC6qwklAdHX-wEA1Zu58DKBhKVGf6OJ6lCbiqp12zwO9jEQSwsnj94JOHxZlMWbAg3-lWoFrIhn4Xl3h776EKGHXWoo3RKaEF2ELQ0yfM2S99-kiYRCio6Uz3XrprG7BZbu4zxtRC7jP4uWNQy3E0N53iThZL5zwq5M_d2lIzYzWzJ_kEWGsREu7N5ECukK1vaSLWpqtTx3f6vEbj4T44HQDSgXFMwHjR85VbLq9it9N0FJWTmqCBNhA0VdLIs8FbsvD7f4W2KiSSq5JY2TawpiiVH2LENGvJ9eF6zBGw-nQ.RDyMTwlyEO8ge2pU.T7u40w9fpe6OdBhfVdMDziCUSxzLfsHSBBKaWvrHaB0U4NJhRVM112w8qxoTgOgBSh531bYVRnBEEmPixKIxNdBnGRooPMcwHJkPBpXczQLgffZ7L8QQNHlCQdO8EBJM7Lg8u36_91bnoaLVq3KxGW3oaFp2tV_UU8KNFEOU16WznnCH7-nOkEjeMjtWWT17aqq2uG3LyIMMXRQ8ls04jU2pTf3uyVD3xtMxnL_g8pQO6nKjHjZZEV0yHzpHM7NXNYTS7P_-cVBNmK_Pa1SqN6D0mhWA_bzR-PX2MXWHHW8dND-g6OzIWe2HS_5ucobtpmR0iupg9ecbnclgdlxN1mfb01EvborFgRnRc9DX6ej0k4sqhJovkJGkWCMjhKu3LsFL6KkIvb2zkCosTPsXCuEhWJKyDE-LTUkaG-AGW0p6WYeWbZBQOfn-NALQfF_hS91hY3J6dFE13vkHcEmhEEE5s7Kp3-FaNGqnwEg3el3RFnhZhxYhKnGYF0paHGzUpW_QAwnjVGURtx-vIsXiHuDuuZZvMLTFURISzDBSvKadGFRekZX54SdCNvaOu_DlkF96rPL2hIFVKdYCIlLeI-zTpon8cBQz3qHAGwen_QLmLIXBni1znfh4I51JzST4RFlmQcB8oKfwsjCjyIiUTJUXX-pOOTWt7PnS5WejwabO7Ssaycq0-rhLMIMinhrarh-ovtdkwVaKaatyGDHwSAME3c46DP8cUudRDXRU6KKH4abdYz15HhB6245BRUQKUyKKsabaP7PENE4h6lsReoyHQAFj31Lfdu4BqAKOm1Fzwehun0DVjqA-Wsfpo0DSbRnvkNRSPDpivUxIveX1jzS5rLCEcyjJTlrqwguSqyhcEtEfv8714Oii7XoLlaZ4j93Y-mnoD5y7bmQYP07Bo7lSGqsJnSA6aR3B4Zb3iS6RFQsE29OfqLuRUb6B0nTlygFEMNTY2NmoVvrmdWdibQiLTGrZpwwv7x67xuBSqvRIWLm6t1eZ4sYoGHfUwKbrzhfQoHytTy4jHbiinkZNASipOm7Uyqtv9mByaiAeoojrEPVJisSyMfH3_DeoyeofT3xNgwCibwjBUsK1lYBEKVh-kPDBWUeD5VGbSZutOGMmTGaVO8_bHmKCvkL509Fmss2rZkh3VURy8zvmPJQyc653nA.z199zDMzeC2OKKB9ENolUw",
+    "expires_in": 3600,
+    "token_type": "Bearer"
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="4">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            User Info <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user</div>
+                                    
+                                    <div class="description request-description">
+                                        <p>This API endpoint returns a user&#39;s information. The request header must include a valid access token, and the body must include a valid username key-value pair.</p>
+<h3 id="arguments">Arguments</h3>
+<p>A request body should adhere to the example below.</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-attr">"username"</span>: <span class="hljs-string">"john"</span>
+}
+</code></pre>
+<h3 id="response">Response</h3>
+<ul>
+<li>&#39;400 Error&#39; if request body is invalid</li>
+<li>&#39;401 Unauthorized&#39; if the auth header token has expired or is missing</li>
+<li>&#39;404 User Not Found&#39; if user does not exist</li>
+<li>&#39;200 OK&#39; on success</li>
+</ul>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Authorization</div>
+                                            <div class="value col-md-9 col-xs-12">eyJraWQiOiJHbVFxQnp6ZTFiMDZtMTBpb0d0Z1o2UDVhS0VYUDVDdjJrWDJtOUF3UU5rPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNDRiMjBmOC1iOGVmLTQ5ZmYtYTU2NC0xOTBjMmZjZDJmNDMiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6Im9wZW5pZCIsImF1dGhfdGltZSI6MTYxMTUxOTM0OSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfYUpGR2dBVkhBIiwiZXhwIjoxNjExNTIyOTQ5LCJpYXQiOjE2MTE1MTkzNDksInZlcnNpb24iOjIsImp0aSI6ImRhNjAyOTk4LWFhNTAtNGUzMC04ZTUxLWMyMTE2ZGU2NGI2ZCIsImNsaWVudF9pZCI6IjYydWk4NjRlNG8zdTk4c3VlMmtwcDQ0YmNoIiwidXNlcm5hbWUiOiJ5aW5neWluZyJ9.n0bJf8AYJcN7hyVviBu-bPyOFzLxXmskhzw29lT6r51WQ0uxIVidCh_CEmMslYE6XHtgviOYfsxuMMs71Y5dI7MlAZYnGfXV9bkT3o24kmIfQQ3KGDMM67Cf0EuvmdOjhzOF38CoVudpM0eoKJXZXsYcLg1XauCqJbg30uSTnrzeU1EOCVKN5Eq8JIwquxiXf6ghvI87impzjJGHwSnYArzg4ZH2pAinHD7Zf4Q3dRNDZwGs13h64MSl1RxBAvUypX5CVtnVSLy-xTPZzh0ln5-ndb1QeqWVCxsut50J-ygfVD1uVTv_B0ZnpGQFMWm8TbON3Q22RvSCsJn3Ni8u2A</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="User Info">
+                                                  <code>
+                                                    
+{
+    "username" : "yingying04"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">GET User Info | Example Request | 200 OK</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="4" data-response-info="response_4">GET User Info | Example Request | 200 OK</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="4"  data-id="response_4">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="GET User Info | Example Request | 200 OK">
+                                                <code class="is-highlighted">
+GET https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user
+{
+    "username" : "brendan"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="GET User Info | Example Request | 200 OK">
+                                                    <code class="is-highlighted">
+[
+    {
+        "Name": "sub",
+        "Value": "f1163bfe-31ed-4beb-9b13-9f9b27a208ef"
+    },
+    {
+        "Name": "address",
+        "Value": "8 Plum Tree Lane"
+    },
+    {
+        "Name": "email_verified",
+        "Value": "true"
+    },
+    {
+        "Name": "gender",
+        "Value": "M"
+    },
+    {
+        "Name": "name",
+        "Value": "Brendan"
+    },
+    {
+        "Name": "phone_number",
+        "Value": "+16313568914"
+    },
+    {
+        "Name": "family_name",
+        "Value": "McCaffrey"
+    },
+    {
+        "Name": "email",
+        "Value": "bmccaf@wharton.upenn.edu"
+    }
+]</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="5">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            POST New Account <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/sources</div>
+                                    
+                                    <div class="description request-description">
+                                        <p>This API endpoint creates a new Account associated with the given User. If the provider field is &quot;Pagame&quot;, the account&#39;s balance will be accepted and the status will be intiated as &quot;ACTIVE&quot;. Otherwise, the Account information is to be verified with the given provider.</p>
+<h3 id="arguments">Arguments</h3>
+<pre><code class="lang-javascript">{
+    <span class="hljs-attr">"id"</span> : <span class="hljs-string">"1212"</span>,
+    <span class="hljs-attr">"balance"</span> : <span class="hljs-number">10000</span>,
+    <span class="hljs-attr">"username"</span> : <span class="hljs-string">"brendan"</span>,
+    <span class="hljs-attr">"provider"</span> : <span class="hljs-string">"PAGAME"</span>
+}
+</code></pre>
+<h3 id="response">Response</h3>
+<ul>
+<li>&#39;400 Error&#39; if request body is invalid</li>
+<li>&#39;401 Unauthorized&#39; if the auth header token has expired or is missing</li>
+<li>&#39;404 User Not Found&#39; if user does not exist</li>
+<li>&#39;200 OK&#39; on success</li>
+</ul>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Authorization</div>
+                                            <div class="value col-md-9 col-xs-12">eyJraWQiOiJHbVFxQnp6ZTFiMDZtMTBpb0d0Z1o2UDVhS0VYUDVDdjJrWDJtOUF3UU5rPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNDRiMjBmOC1iOGVmLTQ5ZmYtYTU2NC0xOTBjMmZjZDJmNDMiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6Im9wZW5pZCIsImF1dGhfdGltZSI6MTYxMTUxOTM0OSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfYUpGR2dBVkhBIiwiZXhwIjoxNjExNTIyOTQ5LCJpYXQiOjE2MTE1MTkzNDksInZlcnNpb24iOjIsImp0aSI6ImRhNjAyOTk4LWFhNTAtNGUzMC04ZTUxLWMyMTE2ZGU2NGI2ZCIsImNsaWVudF9pZCI6IjYydWk4NjRlNG8zdTk4c3VlMmtwcDQ0YmNoIiwidXNlcm5hbWUiOiJ5aW5neWluZyJ9.n0bJf8AYJcN7hyVviBu-bPyOFzLxXmskhzw29lT6r51WQ0uxIVidCh_CEmMslYE6XHtgviOYfsxuMMs71Y5dI7MlAZYnGfXV9bkT3o24kmIfQQ3KGDMM67Cf0EuvmdOjhzOF38CoVudpM0eoKJXZXsYcLg1XauCqJbg30uSTnrzeU1EOCVKN5Eq8JIwquxiXf6ghvI87impzjJGHwSnYArzg4ZH2pAinHD7Zf4Q3dRNDZwGs13h64MSl1RxBAvUypX5CVtnVSLy-xTPZzh0ln5-ndb1QeqWVCxsut50J-ygfVD1uVTv_B0ZnpGQFMWm8TbON3Q22RvSCsJn3Ni8u2A</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="POST New Account">
+                                                  <code>
+                                                    
+{
+  "id": "1134",
+  "account_status": "ACTIVE VERIFIED",
+  "balance": 5000,
+  "provider": "PAGAME",
+  "username": "brendan"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">POST New Account</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="5" data-response-info="response_5">POST New Account</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="5"  data-id="response_5">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="POST New Account">
+                                                <code class="is-highlighted">
+POST https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/sources
+{
+    "id" : "1212",
+    "balance" : 10000,
+    "username" : "brendan",
+    "provider" : "PAGAME"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="POST New Account">
+                                                    <code class="is-highlighted">
+{
+    "statusCode": 200,
+    "body": "\"Succesfully saved the account information!\""
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="6">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            GET User Accounts <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/sources</div>
+                                    
+                                    <div class="description request-description">
+                                        <p>This API endpoint retrieves all the accounts associated with the given User.</p>
+<h3 id="arguments">Arguments</h3>
+<pre><code class="lang-javascript">{
+    <span class="hljs-attr">"username"</span> : <span class="hljs-string">"brendan"</span>
+}
+</code></pre>
+<h3 id="response">Response</h3>
+<ul>
+<li>&#39;400 Error&#39; if request body is invalid</li>
+<li>&#39;401 Unauthorized&#39; if the auth header token has expired or is missing</li>
+<li>&#39;404 User Not Found&#39; if user does not exist</li>
+<li>&#39;200 OK&#39; on success</li>
+</ul>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Authorization</div>
+                                            <div class="value col-md-9 col-xs-12">eyJraWQiOiJHbVFxQnp6ZTFiMDZtMTBpb0d0Z1o2UDVhS0VYUDVDdjJrWDJtOUF3UU5rPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNDRiMjBmOC1iOGVmLTQ5ZmYtYTU2NC0xOTBjMmZjZDJmNDMiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6Im9wZW5pZCIsImF1dGhfdGltZSI6MTYxMTUxOTM0OSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfYUpGR2dBVkhBIiwiZXhwIjoxNjExNTIyOTQ5LCJpYXQiOjE2MTE1MTkzNDksInZlcnNpb24iOjIsImp0aSI6ImRhNjAyOTk4LWFhNTAtNGUzMC04ZTUxLWMyMTE2ZGU2NGI2ZCIsImNsaWVudF9pZCI6IjYydWk4NjRlNG8zdTk4c3VlMmtwcDQ0YmNoIiwidXNlcm5hbWUiOiJ5aW5neWluZyJ9.n0bJf8AYJcN7hyVviBu-bPyOFzLxXmskhzw29lT6r51WQ0uxIVidCh_CEmMslYE6XHtgviOYfsxuMMs71Y5dI7MlAZYnGfXV9bkT3o24kmIfQQ3KGDMM67Cf0EuvmdOjhzOF38CoVudpM0eoKJXZXsYcLg1XauCqJbg30uSTnrzeU1EOCVKN5Eq8JIwquxiXf6ghvI87impzjJGHwSnYArzg4ZH2pAinHD7Zf4Q3dRNDZwGs13h64MSl1RxBAvUypX5CVtnVSLy-xTPZzh0ln5-ndb1QeqWVCxsut50J-ygfVD1uVTv_B0ZnpGQFMWm8TbON3Q22RvSCsJn3Ni8u2A</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="GET User Accounts">
+                                                  <code>
+                                                    
+{
+    "username" : "brendan"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Get Accounts' Information | 200 OK</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="6" data-response-info="response_6">Get Accounts' Information | 200 OK</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="6"  data-id="response_6">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Get Accounts' Information | 200 OK">
+                                                <code class="is-highlighted">
+GET https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/sources
+{
+    "username" : "brendan"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Get Accounts' Information | 200 OK">
+                                                    <code class="is-highlighted">
+{Items=[{"balance":"3500","username":"brendan","provider":"TIGO MONEY","id":"111","account_status":"ACTIVE VERIFIED"},{"balance":"20000","username":"brendan","provider":"TIGO MONEY","id":"3333","account_status":"INACTIVE"},{"balance":1000,"username":"brendan","provider":"PAGAME","id":"2222","account_status":"ACTIVE VERIFIED"}], Count=3, ScannedCount=3, ResponseMetadata={RequestId=EAFAGI4VIFOIK4ODCDMFE86CFJVV4KQNSO5AEMVJF66Q9ASUAAJG, HTTPStatusCode=200, HTTPHeaders={server=Server, date=Mon, 11 Jan 2021 23:00:56 GMT, content-type=application/x-amz-json-1.0, content-length=450, connection=keep-alive, x-amzn-requestid=EAFAGI4VIFOIK4ODCDMFE86CFJVV4KQNSO5AEMVJF66Q9ASUAAJG, x-amz-crc32=1799378315}, RetryAttempts=0}}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="7">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            Initiated Transactions <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/transactions/initiated</div>
+                                    
+                                    <div class="description request-description">
+                                        <p>This endpoint returns all transactions initiated by the user. </p>
+<h3 id="arguments">Arguments</h3>
+<p>A request body should adhere to the example below.</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-attr">"username"</span>: <span class="hljs-string">"brendan"</span>
+}
+</code></pre>
+<h3 id="response">Response</h3>
+<ul>
+<li>&#39;400 Error&#39; if request body is invalid</li>
+<li>&#39;401 Unauthorized&#39; if the auth header token has expired or is missing</li>
+<li>&#39;404 User Not Found&#39; if user does not exist</li>
+<li>&#39;200 OK&#39; on success</li>
+</ul>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Authorization</div>
+                                            <div class="value col-md-9 col-xs-12">eyJraWQiOiJHbVFxQnp6ZTFiMDZtMTBpb0d0Z1o2UDVhS0VYUDVDdjJrWDJtOUF3UU5rPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNDRiMjBmOC1iOGVmLTQ5ZmYtYTU2NC0xOTBjMmZjZDJmNDMiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6Im9wZW5pZCIsImF1dGhfdGltZSI6MTYxMTUxOTM0OSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfYUpGR2dBVkhBIiwiZXhwIjoxNjExNTIyOTQ5LCJpYXQiOjE2MTE1MTkzNDksInZlcnNpb24iOjIsImp0aSI6ImRhNjAyOTk4LWFhNTAtNGUzMC04ZTUxLWMyMTE2ZGU2NGI2ZCIsImNsaWVudF9pZCI6IjYydWk4NjRlNG8zdTk4c3VlMmtwcDQ0YmNoIiwidXNlcm5hbWUiOiJ5aW5neWluZyJ9.n0bJf8AYJcN7hyVviBu-bPyOFzLxXmskhzw29lT6r51WQ0uxIVidCh_CEmMslYE6XHtgviOYfsxuMMs71Y5dI7MlAZYnGfXV9bkT3o24kmIfQQ3KGDMM67Cf0EuvmdOjhzOF38CoVudpM0eoKJXZXsYcLg1XauCqJbg30uSTnrzeU1EOCVKN5Eq8JIwquxiXf6ghvI87impzjJGHwSnYArzg4ZH2pAinHD7Zf4Q3dRNDZwGs13h64MSl1RxBAvUypX5CVtnVSLy-xTPZzh0ln5-ndb1QeqWVCxsut50J-ygfVD1uVTv_B0ZnpGQFMWm8TbON3Q22RvSCsJn3Ni8u2A</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="Initiated Transactions">
+                                                  <code>
+                                                    
+{
+  "initiator": "brendan"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">GET Initiated Transactions</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="7" data-response-info="response_7">GET Initiated Transactions</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="7"  data-id="response_7">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="GET Initiated Transactions">
+                                                <code class="is-highlighted">
+GET https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/transactions/initiated
+{
+    "initiator" : "brendan"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="GET Initiated Transactions">
+                                                    <code class="is-highlighted">
+[
+    {
+        "init-geostamp": "PTR63jiu",
+        "recipient": "john",
+        "recip-geostamp": "J3fy8fn",
+        "init-timestamp": "1596709140",
+        "transaction_status": "PENDING",
+        "amount": 100,
+        "initiator": "brendan",
+        "id": "0XAD32hy",
+        "type": "SEND",
+        "recip-timestamp": "N/A"
+    },
+    {
+        "init-geostamp": "PTR63jiu",
+        "recipient": "john",
+        "recip-geostamp": "J3fy8fn",
+        "init-timestamp": "1596709141",
+        "transaction_status": "COMPLETE",
+        "amount": "200",
+        "initiator": "brendan",
+        "id": "0XArh2hy",
+        "type": "SEND",
+        "recip-timestamp": "1586347972"
+    }
+]</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="8">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="PATCH method" >PATCH</span>
+                                            Initiated Transaction <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/transactions/{id}/initiated</div>
+                                    
+                                    <div class="description request-description">
+                                        <p>This endpoint allows a user to cancel an initiated transaction (payment or request) if the status is pending.</p>
+<h3 id="arguments">Arguments</h3>
+<p>A request body should adhere to the example below.</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"0X321JT"</span>
+}
+</code></pre>
+<h3 id="response">Response</h3>
+<ul>
+<li>&#39;400 Error&#39; if request body is invalid</li>
+<li>&#39;401 Unauthorized&#39; if the auth header token has expired or is missing</li>
+<li>&#39;404 User Not Found&#39; if user does not exist</li>
+<li>&#39;200 OK&#39; on success</li>
+</ul>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Authorization</div>
+                                            <div class="value col-md-9 col-xs-12">eyJraWQiOiJHbVFxQnp6ZTFiMDZtMTBpb0d0Z1o2UDVhS0VYUDVDdjJrWDJtOUF3UU5rPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNDRiMjBmOC1iOGVmLTQ5ZmYtYTU2NC0xOTBjMmZjZDJmNDMiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6Im9wZW5pZCIsImF1dGhfdGltZSI6MTYxMTUxOTM0OSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfYUpGR2dBVkhBIiwiZXhwIjoxNjExNTIyOTQ5LCJpYXQiOjE2MTE1MTkzNDksInZlcnNpb24iOjIsImp0aSI6ImRhNjAyOTk4LWFhNTAtNGUzMC04ZTUxLWMyMTE2ZGU2NGI2ZCIsImNsaWVudF9pZCI6IjYydWk4NjRlNG8zdTk4c3VlMmtwcDQ0YmNoIiwidXNlcm5hbWUiOiJ5aW5neWluZyJ9.n0bJf8AYJcN7hyVviBu-bPyOFzLxXmskhzw29lT6r51WQ0uxIVidCh_CEmMslYE6XHtgviOYfsxuMMs71Y5dI7MlAZYnGfXV9bkT3o24kmIfQQ3KGDMM67Cf0EuvmdOjhzOF38CoVudpM0eoKJXZXsYcLg1XauCqJbg30uSTnrzeU1EOCVKN5Eq8JIwquxiXf6ghvI87impzjJGHwSnYArzg4ZH2pAinHD7Zf4Q3dRNDZwGs13h64MSl1RxBAvUypX5CVtnVSLy-xTPZzh0ln5-ndb1QeqWVCxsut50J-ygfVD1uVTv_B0ZnpGQFMWm8TbON3Q22RvSCsJn3Ni8u2A</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="Initiated Transaction">
+                                                  <code>
+                                                    
+{
+  "id": "1111"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Cancel Transaction | 200 OK</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="8" data-response-info="response_8">Cancel Transaction | 200 OK</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="8"  data-id="response_8">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Cancel Transaction | 200 OK">
+                                                <code class="is-highlighted">
+PATCH https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/transactions/initiated
+{
+    "id" : "0XAD32hy"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Cancel Transaction | 200 OK">
+                                                    <code class="is-highlighted">
+{
+    "statusCode": 200,
+    "body": "\"Successfully cancelling the transaction!\""
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="9">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            Received Transactions <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/transactions/received</div>
+                                    
+                                    <div class="description request-description">
+                                        <p>This endpoint returns all transactions received by the user. </p>
+<h3 id="arguments">Arguments</h3>
+<p>A request body should adhere to the example below.</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-attr">"recipient"</span>: <span class="hljs-string">"brendan"</span>
+}
+</code></pre>
+<h3 id="response">Response</h3>
+<ul>
+<li>&#39;400 Error&#39; if request body is invalid</li>
+<li>&#39;401 Unauthorized&#39; if the auth header token has expired or is missing</li>
+<li>&#39;404 User Not Found&#39; if user does not exist</li>
+<li>&#39;200 OK&#39; on success</li>
+</ul>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Authorization</div>
+                                            <div class="value col-md-9 col-xs-12">eyJraWQiOiJHbVFxQnp6ZTFiMDZtMTBpb0d0Z1o2UDVhS0VYUDVDdjJrWDJtOUF3UU5rPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNDRiMjBmOC1iOGVmLTQ5ZmYtYTU2NC0xOTBjMmZjZDJmNDMiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6Im9wZW5pZCIsImF1dGhfdGltZSI6MTYxMTUxOTM0OSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfYUpGR2dBVkhBIiwiZXhwIjoxNjExNTIyOTQ5LCJpYXQiOjE2MTE1MTkzNDksInZlcnNpb24iOjIsImp0aSI6ImRhNjAyOTk4LWFhNTAtNGUzMC04ZTUxLWMyMTE2ZGU2NGI2ZCIsImNsaWVudF9pZCI6IjYydWk4NjRlNG8zdTk4c3VlMmtwcDQ0YmNoIiwidXNlcm5hbWUiOiJ5aW5neWluZyJ9.n0bJf8AYJcN7hyVviBu-bPyOFzLxXmskhzw29lT6r51WQ0uxIVidCh_CEmMslYE6XHtgviOYfsxuMMs71Y5dI7MlAZYnGfXV9bkT3o24kmIfQQ3KGDMM67Cf0EuvmdOjhzOF38CoVudpM0eoKJXZXsYcLg1XauCqJbg30uSTnrzeU1EOCVKN5Eq8JIwquxiXf6ghvI87impzjJGHwSnYArzg4ZH2pAinHD7Zf4Q3dRNDZwGs13h64MSl1RxBAvUypX5CVtnVSLy-xTPZzh0ln5-ndb1QeqWVCxsut50J-ygfVD1uVTv_B0ZnpGQFMWm8TbON3Q22RvSCsJn3Ni8u2A</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="Received Transactions">
+                                                  <code>
+                                                    
+{
+  "recipient": "john"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">GET Received Transactions</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="9" data-response-info="response_9">GET Received Transactions</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="9"  data-id="response_9">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="GET Received Transactions">
+                                                <code class="is-highlighted">
+GET https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/transactions/received
+{
+    "recipient" : "brendan"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="GET Received Transactions">
+                                                    <code class="is-highlighted">
+[
+    {
+        "init-geostamp": "PTR63jiu",
+        "recipient": "brendan",
+        "recip-geostamp": "J3fy8fn",
+        "init-timestamp": "1596709142",
+        "transaction_status": "COMPLETE",
+        "amount": "1000",
+        "initiator": "john",
+        "id": "1111",
+        "type": "1000",
+        "recip-timestamp": "1586347972"
+    }
+]</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="10">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="PATCH method" >PATCH</span>
+                                            Received Transaction <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/transactions/received</div>
+                                    
+                                    <div class="description request-description">
+                                        <p>This allows a user to accept or reject a received transaction.</p>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Authorization</div>
+                                            <div class="value col-md-9 col-xs-12">eyJraWQiOiJHbVFxQnp6ZTFiMDZtMTBpb0d0Z1o2UDVhS0VYUDVDdjJrWDJtOUF3UU5rPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNDRiMjBmOC1iOGVmLTQ5ZmYtYTU2NC0xOTBjMmZjZDJmNDMiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6Im9wZW5pZCIsImF1dGhfdGltZSI6MTYxMTUxOTM0OSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfYUpGR2dBVkhBIiwiZXhwIjoxNjExNTIyOTQ5LCJpYXQiOjE2MTE1MTkzNDksInZlcnNpb24iOjIsImp0aSI6ImRhNjAyOTk4LWFhNTAtNGUzMC04ZTUxLWMyMTE2ZGU2NGI2ZCIsImNsaWVudF9pZCI6IjYydWk4NjRlNG8zdTk4c3VlMmtwcDQ0YmNoIiwidXNlcm5hbWUiOiJ5aW5neWluZyJ9.n0bJf8AYJcN7hyVviBu-bPyOFzLxXmskhzw29lT6r51WQ0uxIVidCh_CEmMslYE6XHtgviOYfsxuMMs71Y5dI7MlAZYnGfXV9bkT3o24kmIfQQ3KGDMM67Cf0EuvmdOjhzOF38CoVudpM0eoKJXZXsYcLg1XauCqJbg30uSTnrzeU1EOCVKN5Eq8JIwquxiXf6ghvI87impzjJGHwSnYArzg4ZH2pAinHD7Zf4Q3dRNDZwGs13h64MSl1RxBAvUypX5CVtnVSLy-xTPZzh0ln5-ndb1QeqWVCxsut50J-ygfVD1uVTv_B0ZnpGQFMWm8TbON3Q22RvSCsJn3Ni8u2A</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="Received Transaction">
+                                                  <code>
+                                                    
+{
+  "id": "0XArh2hy",
+  "accept": "true"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Accept Transaction | 400 | Already Completed</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="10" data-response-info="response_10">Accept Transaction | 400 | Already Completed</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="10"  data-id="response_10">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Accept Transaction | 400 | Already Completed">
+                                                <code class="is-highlighted">
+PATCH https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/transactions/received
+{
+    "id" : "1111",
+    "accept" : "true"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Accept Transaction | 400 | Already Completed">
+                                                    <code class="is-highlighted">
+{
+    "statusCode": 400,
+    "body": "\"Transaction was already completed!\""
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="11">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            POST Transaction <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/transactions</div>
+                                    
+                                    <div class="description request-description">
+                                        <p>This API endpoint initiates a new transaction on the user&#39;s behalf.</p>
+<h3 id="arguments">Arguments</h3>
+<p>The request must adhere to the following formatted example.</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1111"</span>,
+  <span class="hljs-attr">"transaction_status"</span>: <span class="hljs-string">"COMPLETE"</span>,
+  <span class="hljs-attr">"amount"</span>: <span class="hljs-number">1000</span>,
+  <span class="hljs-attr">"init-geostamp"</span>: <span class="hljs-string">"PTR63jiu"</span>,
+  <span class="hljs-attr">"init-timestamp"</span>: <span class="hljs-string">"1596709142"</span>,
+  <span class="hljs-attr">"recip-geostamp"</span>: <span class="hljs-string">"J3fy8fn"</span>,
+  <span class="hljs-attr">"recip-timestamp"</span>: <span class="hljs-string">"1586347972"</span>,
+  <span class="hljs-attr">"initiator"</span>: <span class="hljs-string">"john"</span>,
+  <span class="hljs-attr">"recipient"</span>: <span class="hljs-string">"brendan"</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"SEND"</span>
+}
+</code></pre>
+<h3 id="response">Response</h3>
+<ul>
+<li>&#39;400 Error&#39; if request body is invalid</li>
+<li>&#39;401 Unauthorized&#39; if the auth header token has expired or is missing</li>
+<li>&#39;404 User Not Found&#39; if user does not exist</li>
+<li>&#39;200 OK&#39; on success</li>
+</ul>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Authorization</div>
+                                            <div class="value col-md-9 col-xs-12">eyJraWQiOiJHbVFxQnp6ZTFiMDZtMTBpb0d0Z1o2UDVhS0VYUDVDdjJrWDJtOUF3UU5rPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNDRiMjBmOC1iOGVmLTQ5ZmYtYTU2NC0xOTBjMmZjZDJmNDMiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6Im9wZW5pZCIsImF1dGhfdGltZSI6MTYxMTUxOTM0OSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfYUpGR2dBVkhBIiwiZXhwIjoxNjExNTIyOTQ5LCJpYXQiOjE2MTE1MTkzNDksInZlcnNpb24iOjIsImp0aSI6ImRhNjAyOTk4LWFhNTAtNGUzMC04ZTUxLWMyMTE2ZGU2NGI2ZCIsImNsaWVudF9pZCI6IjYydWk4NjRlNG8zdTk4c3VlMmtwcDQ0YmNoIiwidXNlcm5hbWUiOiJ5aW5neWluZyJ9.n0bJf8AYJcN7hyVviBu-bPyOFzLxXmskhzw29lT6r51WQ0uxIVidCh_CEmMslYE6XHtgviOYfsxuMMs71Y5dI7MlAZYnGfXV9bkT3o24kmIfQQ3KGDMM67Cf0EuvmdOjhzOF38CoVudpM0eoKJXZXsYcLg1XauCqJbg30uSTnrzeU1EOCVKN5Eq8JIwquxiXf6ghvI87impzjJGHwSnYArzg4ZH2pAinHD7Zf4Q3dRNDZwGs13h64MSl1RxBAvUypX5CVtnVSLy-xTPZzh0ln5-ndb1QeqWVCxsut50J-ygfVD1uVTv_B0ZnpGQFMWm8TbON3Q22RvSCsJn3Ni8u2A</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="POST Transaction">
+                                                  <code>
+                                                    
+{
+  "id": "1234",
+  "transaction_status": "COMPLETE",
+  "amount": 1000,
+  "init-geostamp": "PTR63jiu",
+  "init-timestamp": "1596709142",
+  "recip-geostamp": "J3fy8fn",
+  "recip-timestamp": "1586347972",
+  "initiator": "john",
+  "recipient": "brendan",
+  "type": "SEND"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">POST Transaction</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="11" data-response-info="response_11">POST Transaction</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="11"  data-id="response_11">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="POST Transaction">
+                                                <code class="is-highlighted">
+POST https://5sts68e4kk.execute-api.us-east-1.amazonaws.com/test/user/transactions
+{
+  "id": "1111",
+  "transaction_status": "COMPLETE",
+  "amount": 1000,
+  "init-geostamp": "PTR63jiu",
+  "init-timestamp": "1596709142",
+  "recip-geostamp": "J3fy8fn",
+  "recip-timestamp": "1586347972",
+  "initiator": "john",
+  "recipient": "brendan",
+  "type": "SEND"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="POST Transaction">
+                                                    <code class="is-highlighted">
+{
+    "statusCode": 200,
+    "body": "\"Succesfully saved the transaction information!\""
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+    <!-- page-wrapper -->
+    <!-- using online scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    <script src="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/bootstrap-treeview.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script type="application/javascript">
+        var data = [{'text': 'Users', 'nodes': [{'text': 'New User', 'href': '#1', 'method': 'POST'}, {'text': 'GET User Sign In', 'href': '#2', 'method': 'GET'}, {'text': 'User Authentication', 'href': '#3', 'method': 'POST'}, {'text': 'User Info', 'href': '#4', 'method': 'GET'}], 'icon': 'fas fa-folder', 'selectable': 'false'}, {'text': 'Accounts', 'nodes': [{'text': 'POST New Account', 'href': '#5', 'method': 'POST'}, {'text': 'GET User Accounts', 'href': '#6', 'method': 'GET'}], 'icon': 'fas fa-folder', 'selectable': 'false'}, {'text': 'Transactions', 'nodes': [{'text': 'Initiated', 'nodes': [{'text': 'Initiated Transactions', 'href': '#7', 'method': 'GET'}, {'text': 'Initiated Transaction', 'href': '#8', 'method': 'PATCH'}], 'icon': 'fas fa-folder', 'selectable': 'false'}, {'text': 'Received', 'nodes': [{'text': 'Received Transactions', 'href': '#9', 'method': 'GET'}, {'text': 'Received Transaction', 'href': '#10', 'method': 'PATCH'}], 'icon': 'fas fa-folder', 'selectable': 'false'}, {'text': 'POST Transaction', 'href': '#11', 'method': 'POST'}], 'icon': 'fas fa-folder', 'selectable': 'false'}]
+        $('#tree').treeview({
+            data: data,
+            levels: 10,
+            expandIcon: 'fas fa-caret-right',
+            collapseIcon: 'fas fa-caret-down',
+            enableLinks: true,
+            showIcon: true,
+            showMethod: true
+        });
+    </script>
+
+</body>
+
+</html>
